@@ -21,13 +21,13 @@ def run_pipeline(adata, configs, show_plots=False):
         plot_name="violin-plots.png",
         show_plots=show_plots
     )
-    # generate_scatter_plot(
-    #     dataset=adata,
-    #     variables=['total_counts', 'pct_counts_mt'],
-    #     plot_name="total_counts-vs-pct-counts-mt.png"
-    # )
-    # generate_scatter_plot(
-    #     dataset=adata,
-    #     variables=['total_counts', 'n_genes_by_counts'],
-    #     plot_name="total_counts-vs-n_genes_by_counts.png"
-    # )
+    generate_scatter_plot(
+        dataset=adata,
+        variables=['total_counts', 'pct_counts_mt'],
+        plot_name="total_counts-vs-pct-counts-mt.png"
+    )
+    generate_scatter_plot(
+        dataset=adata,
+        variables=['total_counts', 'n_genes_by_counts'],
+        plot_name="total_counts-vs-n_genes_by_counts.png"
+    )

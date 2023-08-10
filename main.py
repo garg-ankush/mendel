@@ -10,9 +10,6 @@ from askmendel.services.read_configs import read_configs
 from askmendel.services.format_code import execute_code
 from askmendel.services.mendel import AskMendel
 
-# parser = argparse.ArgumentParser(description='Load dataset')
-# parser.add_argument('path_to_dataset', help='Provide a path to dataset')
-
 
 if __name__ == "__main__":
     # args = parser.parse_args()
