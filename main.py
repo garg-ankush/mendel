@@ -2,12 +2,21 @@ from askmendel.services.load_dataset import download_dataset
 from askmendel.services.read_configs import read_configs
 from askmendel.services.base_pipeline import run_pipeline
 
-
-if __name__ == "__main__":
+def main():
+    # Read the configs
     configs = read_configs()
+    # Download dataset
     adata = download_dataset()
-
+    # Run basic analysis pipeline
     run_pipeline(adata, configs)
+
+    
+
+# if __name__ == "__main__":
+#     configs = read_configs()
+#     adata = download_dataset()
+
+#     run_pipeline(adata, configs)
 
     # # RUN OUTLIER DETECTION ALGORITHMS HERE
     # # Keep values less than n_genes

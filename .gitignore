@@ -5,5 +5,7 @@
 /.env
 
 askmendel/__pycache__
+askmendel/services/__pycache__
 data
-
+output
+.ipynb_checkpoints
