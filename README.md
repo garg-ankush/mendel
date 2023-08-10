@@ -13,7 +13,8 @@
 
 # How to set up your environment
 1. Create a virtual environment: `virtualenv ~/.venv`
-2. Edit `bashrc`
+2. Edit `bashrc` and source virtual env from it.
+3. Run `make all`
 
 ## Command-line tools
 
