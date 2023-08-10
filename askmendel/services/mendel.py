@@ -30,10 +30,7 @@ class LLM:
             "presence_penalty": 0.6,
         }
 
-        response = self.openai.ChatCompletion.create(
-            model=self.model_name,
-            **params
-        )
+        response = self.openai.ChatCompletion.create(model=self.model_name, **params)
         return response["choices"][0]["message"]["content"]
 
 
@@ -98,23 +95,19 @@ class AskMendel:
             "adata_metadata": data.to_df().head(),
             "n_rows": data.shape[0],
             "n_columns": data.shape[1],
-            "plan": plan
-            }
+            "plan": plan,
+        }
 
         instruction = DefaultPrompt(**generate_code_default_values)
-        return self.llm.call(instruction=str(instruction), prompt=str(prompt), suffix="\n\nCode:\n")
+        return self.llm.call(
+            instruction=str(instruction), prompt=str(prompt), suffix="\n\nCode:\n"
+        )
 
     def generate_plan(self, data, prompt):
         generate_code_default_values = {
             "adata_metadata": data.to_df().head(),
             "n_rows": data.shape[0],
-            "n_columns": data.shape[1]
+            "n_columns": data.shape[1],
         }
         instruction = DefaultPlan(**generate_code_default_values)
         return self.llm.call(instruction=str(instruction), prompt=str(prompt))
-
-
-
-
-
-

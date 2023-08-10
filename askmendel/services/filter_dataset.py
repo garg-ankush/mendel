@@ -14,7 +14,3 @@ def filter_genes(dataset, minimum_cells: int = None):
 def filter_outliers(dataset, column_name, threshold):
     print("Filtering outliers...")
     return dataset[dataset.obs[column_name] < threshold, :]
-
-
-
-

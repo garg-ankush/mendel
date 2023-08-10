@@ -12,7 +12,6 @@ def load_dataset(path_to_dataset):
     # Traverse through all the files in the path to dataset
     for root, dirs, files in os.walk(path_to_dataset):
         for file in files:
-
             if file.endswith("h5"):
                 file_type = "h5"
                 file_path = os.path.join(root, file)
@@ -32,5 +31,3 @@ def download_dataset():
     sc.datasets.pbmc3k()
 
     return sc.read_h5ad("data/pbmc3k_raw.h5ad")
-
-
