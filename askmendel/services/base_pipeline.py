@@ -1,11 +1,9 @@
-from .filter_dataset import filter_genes, filter_cells, filter_outliers
+from .filter_dataset import filter_genes, filter_cells
 from .generate_plots import (
     generate_scatter_plot,
-    generate_violin_plot,
-    generate_highly_variable_genes_plot,
-    generate_pca_plot,
+    generate_violin_plot
 )
-from .preprocessing import calculate_qc_metrics, pca
+from .preprocessing import calculate_qc_metrics
 
 
 def run_pipeline(adata, configs, show_plots=False):

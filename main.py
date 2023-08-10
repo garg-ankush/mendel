@@ -1,18 +1,5 @@
-import matplotlib.pyplot as plt
-import scanpy as sc
-
-from askmendel.services.load_dataset import load_dataset, download_dataset
-from askmendel.services.filter_dataset import (
-    filter_genes,
-    filter_cells,
-    filter_outliers,
-)
-
+from askmendel.services.load_dataset import download_dataset
 from askmendel.services.read_configs import read_configs
-
-from askmendel.services.format_code import execute_code
-from askmendel.services.mendel import AskMendel
-
 from askmendel.services.base_pipeline import run_pipeline
 
 
