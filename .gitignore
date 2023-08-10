@@ -3,3 +3,6 @@
 /dataset/
 /cache/
 /.env
+
+askmendel/__pycache__
+data
