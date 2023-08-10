@@ -2,23 +2,22 @@ import argparse
 import matplotlib.pyplot as plt
 import scanpy as sc
 
-from load_dataset import load_dataset
-from filter_dataset import filter_genes, filter_cells, filter_outliers
+from askmendel.services.load_dataset import load_dataset, download_dataset
+from askmendel.services.filter_dataset import filter_genes, filter_cells, filter_outliers
 
-from data.services.read_configs import read_configs
+from askmendel.services.read_configs import read_configs
 
-from format_code import execute_code
-from mendel import AskMendel
+from askmendel.services.format_code import execute_code
+from askmendel.services.mendel import AskMendel
 
-parser = argparse.ArgumentParser(description='Load dataset')
-parser.add_argument('path_to_dataset', help='Provide a path to dataset')
+# parser = argparse.ArgumentParser(description='Load dataset')
+# parser.add_argument('path_to_dataset', help='Provide a path to dataset')
 
 
 if __name__ == "__main__":
-    args = parser.parse_args()
+    # args = parser.parse_args()
     configs = read_configs()
-
-    print(configs)
+    adata = download_dataset()
 
     # # RUN OUTLIER DETECTION ALGORITHMS HERE
     # # Keep values less than n_genes

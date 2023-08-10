@@ -2,7 +2,7 @@ import yaml
 
 
 def read_configs():
-    with open("/Users/ankushgarg/Desktop/projects/mendel/config.yaml", "r") as stream:
+    with open("askmendel/config.yaml", "r") as stream:
         try:
             config_file = yaml.safe_load(stream)
             flattened_configs = {}
