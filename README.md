@@ -1,3 +1,4 @@
+[![Test Build](https://github.com/garg-ankush/mendel/actions/workflows/main.yml/badge.svg)](https://github.com/garg-ankush/mendel/actions/workflows/main.yml)
 # Mendel
 
 ## Build out Python project scaffold
