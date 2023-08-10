@@ -1,6 +1,6 @@
 import scanpy as sc
 import matplotlib.pyplot as plt
-from utilities import save_figure
+from .utilities import save_figure
 
 
 def generate_violin_plot(dataset, variables, plot_name, show_plots):

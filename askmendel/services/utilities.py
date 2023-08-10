@@ -16,8 +16,9 @@ def read_data(file_path: str, file_type: str):
 def save_figure(figure, filename: str):
     # Derive root path
     parent_path = Path(__file__).resolve().parent
+    root_path = Path(parent_path).parents[1]  # "path/to
     # Derive directory path for figures
-    directory_path = "/".join([str(parent_path), "output", "figures"])
+    directory_path = "/".join([str(root_path), "output", "figures"])
     # Create directory if it doesn't exist already
     os.makedirs(directory_path, exist_ok=True)
     # Save the current figure to a variable

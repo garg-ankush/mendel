@@ -1,4 +1,3 @@
-import argparse
 import matplotlib.pyplot as plt
 import scanpy as sc
 
@@ -14,11 +13,14 @@ from askmendel.services.read_configs import read_configs
 from askmendel.services.format_code import execute_code
 from askmendel.services.mendel import AskMendel
 
+from askmendel.services.base_pipeline import run_pipeline
+
 
 if __name__ == "__main__":
-    # args = parser.parse_args()
     configs = read_configs()
     adata = download_dataset()
+
+    run_pipeline(adata, configs)
 
     # # RUN OUTLIER DETECTION ALGORITHMS HERE
     # # Keep values less than n_genes
