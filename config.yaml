@@ -1,8 +1,0 @@
-preprocessing:
-  minimum_cells: 3
-  minimum_genes: 1000
-  mitochondrial_genes_only: True
-highly_variable_genes:
-  highly_variable_genes_min_mean: 0.0125
-  highly_variable_genes_max_mean: 3
-  highly_variable_genes_min_disp: 0.5
