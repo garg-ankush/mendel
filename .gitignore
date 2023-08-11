@@ -4,10 +4,10 @@
 /cache/
 /.env
 
-askmendel/__pycache__
-askmendel/services/__pycache__
-askmendel/prompts/__pycache__
-askmendel/llm/__pycache__
+askmendel/__pycache__/*
+askmendel/services/__pycache__/*
+askmendel/prompts/__pycache__/*
+askmendel/llm/__pycache__/*
 data
 output
 .ipynb_checkpoints
