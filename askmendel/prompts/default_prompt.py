@@ -3,13 +3,14 @@ class DefaultPrompt:
     text: str = """
     You are provided with anndata data (adata) with {n_rows} genes and {n_columns} cells.
     
+    This is the metadata of the dataset: {adata_metadata}.
+
     You are also provided with a general plan on how to execute the steps: {plan}
     
     Based on the given plan write python code, use scanpy library to generate the code. 
 
     """
 
-    # This is the metadata of the dataset: {adata_metadata}
     # No need to load the dataset, you will be provided the adata.
 
     # When asked about the data, you should respond with a plan in a bullet list.
