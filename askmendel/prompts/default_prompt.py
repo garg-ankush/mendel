@@ -9,6 +9,8 @@ class DefaultPrompt:
     
     Based on the given plan write python code, use scanpy library to generate the code. 
 
+    Your python code should NOT read the dataset in. Always assume that `adata` is already available in memory.
+
     """
 
     # No need to load the dataset, you will be provided the adata.

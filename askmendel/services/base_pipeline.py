@@ -1,3 +1,4 @@
+import scanpy as sc
 from .filter_dataset import filter_genes, filter_cells
 from .generate_plots import (
     generate_scatter_plot,
@@ -32,3 +33,11 @@ def run_pipeline(adata, configs, show_plots=False):
         variables=["total_counts", "n_genes_by_counts"],
         plot_name="total_counts-vs-n_genes_by_counts.png",
     )
+
+    print("Normalizing data...")
+    sc.pp.normalize_total(adata, target_sum=1e4)
+
+    print("Logarithmize data...")
+    sc.pp.log1p(adata)
+
+    

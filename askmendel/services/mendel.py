@@ -84,40 +84,21 @@ class AskMendel:
             self.count = 0
             while self.count < self._max_retries:
                 print(f"Trying to run {self.count} time")
+                print()
                 try:
                     # Execute the code
                     locals_dict = {"adata": adata}
                     exec(code_to_run, globals(), locals_dict)
-                    adata = locals_dict["adata"]
+                    self.adata = locals_dict["adata"]
                     break
                 except Exception as e:
                     self.count += 1
                     print(e)
-                    # code_to_run = self._retry_run_code(code_to_run, e, adata)
+                    code_to_run = self._retry_run_code(code_to_run, e, adata)
 
-        captured_output = output.getvalue().strip()
-        if code_to_run.count("print(") > 1:
-            return captured_output
+        return output.getvalue().strip(), adata, code_to_run
+        
 
-        lines = code_to_run.strip().split("\n")
-        last_line = lines[-1].strip()
-
-        match = re.match(r"^print\((.*)\)$", last_line)
-        if match:
-            last_line = match.group(1)
-
-        try:
-            result = eval(last_line, environment)
-
-            # In some cases, the result is a tuple of values. For example, when
-            # the last line is `print("Hello", "World")`, the result is a tuple
-            # of two strings. In this case, we want to return a string
-            if isinstance(result, tuple):
-                result = " ".join([str(element) for element in result])
-
-            return result
-        except Exception:
-            return captured_output
 
     def _retry_run_code(self, code_to_run: str, e: Exception, adata):
         print("Going to correct the error")
@@ -130,6 +111,7 @@ class AskMendel:
             "n_rows": self.original_instructions["n_rows"],
             "n_columns": self.original_instructions["n_columns"]
         }
+        print("correct_error_default_values")
         print(correct_error_default_values)
         print()
         
