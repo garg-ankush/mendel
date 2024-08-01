@@ -1,6 +1,8 @@
 [![Test Build](https://github.com/garg-ankush/mendel/actions/workflows/main.yml/badge.svg)](https://github.com/garg-ankush/mendel/actions/workflows/main.yml)
 # Mendel
 
+### Mendel is a AI-platform that helps biologists perform analysis on genomic data using only natural language.
+
 ## Build out Python project scaffold
 ### Github codespaces
 * Makefile
